@@ -1,0 +1,17 @@
+<h1>Search City</h1>
+<form [formGroup]="inputdata" (ngSubmit)="onsubmit()">
+  <input type="text" formControlName="cityname">
+  <button>submit</button>
+</form>
+
+<div *ngIf="alldata.cod=='200'">
+  <h3>City Name: {{alldata.name}} </h3>
+  <h4>Temperature: {{alldata.main.temp}} K</h4>
+  <h4>Minimum Temperature: {{alldata.main.temp_min}} K</h4>
+  <h4>Maximum Temperature: {{alldata.main.temp_max}} K</h4>
+  <h4>Pressure: {{alldata.main.pressure}}</h4>
+</div>
+<div *ngIf="alldata.cod=='404'">
+  <h4>City not found</h4>
+  
+</div>
